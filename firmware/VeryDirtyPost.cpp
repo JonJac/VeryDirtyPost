@@ -113,8 +113,8 @@ void HttpClient::request(http_request_t &aRequest, http_header_t headers[], cons
         client.println(aRequest.body);
     }
 	
-	
-	for(int i = 0; i < 500; i++); //busy work
+	Serial.println("MADE IT PRE LOOP!! \n");
+	for(int i = 0; i < 50; i++); //busy work
 	
 	if(client.connected())
 		client.stop();
