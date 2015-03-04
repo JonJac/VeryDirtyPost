@@ -72,9 +72,10 @@ public:
         request(aRequest, NULL, HTTP_METHOD_DELETE);
     }
 
-    void post(http_request_t &aRequest, http_header_t headers[])
+    TCPClient post(http_request_t &aRequest, http_header_t headers[])
     {
         request(aRequest, headers, HTTP_METHOD_POST);
+		return &client;
     }
 
 

@@ -35,7 +35,7 @@ void HttpClient::sendHeader(const char* aHeaderName)
 * in the aResponse struct and set the headers and the options in the aRequest
 * struct.
 */
-void HttpClient::request(http_request_t &aRequest, http_header_t headers[], const char* aHttpMethod)
+TCPClient HttpClient::request(http_request_t &aRequest, http_header_t headers[], const char* aHttpMethod)
 {
 	Serial.print("Hostname: ");
 	Serial.println(aRequest.hostname);
@@ -112,11 +112,6 @@ void HttpClient::request(http_request_t &aRequest, http_header_t headers[], cons
     if (aRequest.body != NULL) {
         client.println(aRequest.body);
     }
-	
-	Serial.println("MADE IT PRE LOOP!! \n");
-	for(int i = 0; i < 500; i++); //busy work
-	
-	if(client.connected())
-		client.stop();
+
 	Serial.println("MADE IT!! \n");
 }
