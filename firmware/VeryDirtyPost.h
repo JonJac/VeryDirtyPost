@@ -1,5 +1,5 @@
-#ifndef __HTTP_CLIENT_H_
-#define __HTTP_CLIENT_H_
+#ifndef __VERY_DIRTY_POST_H_
+#define __VERY_DIRTY_POST_H_
 
 #include "spark_wiring_string.h"
 #include "spark_wiring_tcpclient.h"
@@ -119,4 +119,4 @@ private:
     void sendHeader(const char* aHeaderName);
 };
 
-#endif /* __HTTP_CLIENT_H_ */
+#endif /* __VERY_DIRTY_POST_H_ */
