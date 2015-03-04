@@ -38,14 +38,14 @@ void HttpClient::sendHeader(const char* aHeaderName)
 void HttpClient::request(http_request_t &aRequest, http_header_t headers[], const char* aHttpMethod)
 {
 	
-	Serial.println("Hostname: ");
-	Serial.print(aRequest.hostname);
+	Serial.print("Hostname: ");
+	Serial.println(aRequest.hostname);
 	
-	Serial.println("Path: ");
-	Serial.print(aRequest.path);
+	Serial.print("Path: ");
+	Serial.println(aRequest.path);
 	
-	Serial.println("Body: ");
-	Serial.print(aRequest.body);
+	Serial.print("Body: ");
+	Serial.println(aRequest.body);
 	
     // NOTE: The default port tertiary statement is unpredictable if the request structure is not initialised
     // http_request_t request = {0} or memset(&request, 0, sizeof(http_request_t)) should be used
@@ -115,6 +115,6 @@ void HttpClient::request(http_request_t &aRequest, http_header_t headers[], cons
 		client.flush();
     }
 	
-	
-	client.stop();
+	Serial.println("MADE IT!! \n");
+
 }
