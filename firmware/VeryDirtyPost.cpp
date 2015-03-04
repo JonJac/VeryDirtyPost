@@ -112,9 +112,10 @@ void HttpClient::request(http_request_t &aRequest, http_header_t headers[], cons
 
     if (aRequest.body != NULL) {
         client.println(aRequest.body);
-		client.flush();
     }
 	
+	
+	
 	Serial.println("MADE IT!! \n");
-
+	client.stop();
 }
