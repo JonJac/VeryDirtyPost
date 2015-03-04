@@ -35,7 +35,7 @@ void HttpClient::sendHeader(const char* aHeaderName)
 * in the aResponse struct and set the headers and the options in the aRequest
 * struct.
 */
-void HttpClient::request(http_request_t &aRequest, http_response_t &aResponse, http_header_t headers[], const char* aHttpMethod)
+void HttpClient::request(http_request_t &aRequest, http_header_t headers[], const char* aHttpMethod)
 {
     // NOTE: The default port tertiary statement is unpredictable if the request structure is not initialised
     // http_request_t request = {0} or memset(&request, 0, sizeof(http_request_t)) should be used

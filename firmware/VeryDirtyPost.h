@@ -57,24 +57,24 @@ public:
     * Can't use 'delete' as name since it's a C++ keyword.
     */
 
-    void post(http_request_t &aRequest, http_response_t &aResponse)
+    void post(http_request_t &aRequest)
     {
-        request(aRequest, aResponse, NULL, HTTP_METHOD_POST);
+        request(aRequest,  NULL, HTTP_METHOD_POST);
     }
 
-    void put(http_request_t &aRequest, http_response_t &aResponse)
+    void put(http_request_t &aRequest)
     {
-        request(aRequest, aResponse, NULL, HTTP_METHOD_PUT);
+        request(aRequest, NULL, HTTP_METHOD_PUT);
     }
 
-    void del(http_request_t &aRequest, http_response_t &aResponse)
+    void del(http_request_t &aRequest)
     {
-        request(aRequest, aResponse, NULL, HTTP_METHOD_DELETE);
+        request(aRequest, NULL, HTTP_METHOD_DELETE);
     }
 
-    void post(http_request_t &aRequest, http_response_t &aResponse, http_header_t headers[])
+    void post(http_request_t &aRequest, http_header_t headers[])
     {
-        request(aRequest, aResponse, headers, HTTP_METHOD_POST);
+        request(aRequest, headers, HTTP_METHOD_POST);
     }
 
 
@@ -82,7 +82,7 @@ private:
     /**
     * Underlying HTTP methods.
     */
-    void request(http_request_t &aRequest, http_response_t &aResponse, http_header_t headers[], const char* aHttpMethod);
+    void request(http_request_t &aRequest, http_header_t headers[], const char* aHttpMethod);
     void sendHeader(const char* aHeaderName, const char* aHeaderValue);
     void sendHeader(const char* aHeaderName, const int aHeaderValue);
     void sendHeader(const char* aHeaderName);
