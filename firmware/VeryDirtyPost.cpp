@@ -37,6 +37,8 @@ void HttpClient::sendHeader(const char* aHeaderName)
 */
 void HttpClient::request(http_request_t &aRequest, http_header_t headers[], const char* aHttpMethod)
 {
+	if(client.connected())
+		client.stop();
 	
 	Serial.print("Hostname: ");
 	Serial.println(aRequest.hostname);
@@ -114,8 +116,5 @@ void HttpClient::request(http_request_t &aRequest, http_header_t headers[], cons
         client.println(aRequest.body);
     }
 	
-	
-	
 	Serial.println("MADE IT!! \n");
-	client.stop();
 }
